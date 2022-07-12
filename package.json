@@ -1,8 +1,8 @@
 {
   "name": "account-management-system",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "This is a sample project to provide an API of account management system",
+  "author": "Taron Petrosyan <taron@brainstormtech.io> https://www.linkedin.com/in/taroninak",
   "private": true,
   "license": "MIT",
   "scripts": {

@@ -4,6 +4,7 @@ import { AppConfigModule } from './config/config.module';
 import { HealthModule } from './health/health.module';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { AppConfigService } from './config/config.service';
+import { PersonModule } from './person/person.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { AppConfigService } from './config/config.service';
     }),
     AppConfigModule,
     HealthModule,
+    PersonModule,
   ],
 })
 export class AppModule {}

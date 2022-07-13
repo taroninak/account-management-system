@@ -15,7 +15,7 @@ const dataSource = new DataSource({
   password,
   database,
   schema,
-  migrations: ['database/migrations/*.ts'],
+  migrations: ['database/migrations/*.ts', 'database/seeders/*.ts'],
 } as PostgresConnectionOptions);
 
 export default dataSource;

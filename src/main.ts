@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { AppConfigService } from './config/config.service';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ValidationPipe } from '@nestjs/common';
 
 function setupSwagger(app) {
   const config = new DocumentBuilder()
@@ -21,6 +22,11 @@ async function bootstrap() {
   const appConfig = app.get(AppConfigService);
 
   setupSwagger(app);
+  app.useGlobalPipes(
+    new ValidationPipe({
+      transform: true,
+    }),
+  );
   await app.listen(appConfig.port, appConfig.host);
 
   const appUrl = `http://${appConfig.host}:${appConfig.port}`;

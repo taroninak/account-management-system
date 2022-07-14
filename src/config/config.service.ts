@@ -14,7 +14,7 @@ export class AppConfigService {
   }
 
   get ormConfig() {
-    return {
+    const config = {
       type: 'postgres',
       host: this.configService.get('DB_HOST', 'localhost'),
       port: this.configService.get('DB_PORT', 5432),
@@ -23,12 +23,15 @@ export class AppConfigService {
       database: this.configService.get('DB_NAME'),
       schema: this.configService.get('DB_SCHEMA', 'public'),
       autoLoadEntities: true,
-      ssl: this.configService.get('DB_SSL', false),
       synchronize: false,
       logging: true,
-      extra: {
-        ssl: { rejectUnauthorized: false },
-      },
+      ssl: this.configService.get('DB_SSL', false),
+      extra: {},
     };
+
+    if (config.ssl) {
+      config.extra = { ssl: { rejectUnauthorized: false } };
+    }
+    return config;
   }
 }

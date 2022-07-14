@@ -41,6 +41,11 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+Also, if you have docker-compose installed on your system you can just run
+```bash
+docker-compose up
+```
+
 ## Documentation
 OpenApi Documentation is available at https://account-managment-system.herokuapp.com/docs
 

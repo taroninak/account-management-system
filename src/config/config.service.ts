@@ -23,9 +23,12 @@ export class AppConfigService {
       database: this.configService.get('DB_NAME'),
       schema: this.configService.get('DB_SCHEMA', 'public'),
       autoLoadEntities: true,
-      ssl: false,
+      ssl: this.configService.get('DB_SSL', false),
       synchronize: false,
       logging: true,
+      extra: {
+        ssl: { rejectUnauthorized: false },
+      },
     };
   }
 }

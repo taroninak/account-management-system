@@ -23,7 +23,7 @@
     "migration:run": "ts-node ./node_modules/typeorm/cli.js  migration:run -d database/config.ts",
     "migration:revert": "ts-node ./node_modules/typeorm/cli.js  migration:revert -d database/config.ts",
     "migration:create": "ts-node ./node_modules/typeorm/cli.js  migration:create",
-    "heroku-prebuild": "npm install --only=dev"
+    "heroku-prebuild": "npm install --production=false"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",

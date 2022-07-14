@@ -17,4 +17,12 @@ export class PersonDto {
   @ApiProperty()
   @Expose()
   birthDate: string;
+
+  @ApiProperty()
+  @Expose()
+  createdAt: Date;
+
+  @ApiProperty()
+  @Expose()
+  updatedAt: Date;
 }

@@ -14,9 +14,7 @@ describe('HealthController', () => {
     healthController = app.get<HealthController>(HealthController);
   });
 
-  describe('getStatus', () => {
-    it('should return "OK!"', () => {
-      expect(healthController.getStatus()).toBe('OK!');
-    });
+  it('Status should be "OK!', () => {
+    expect(healthController.getStatus()).toBe('OK!');
   });
 });

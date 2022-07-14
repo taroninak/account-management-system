@@ -1,16 +1,20 @@
 import { Injectable } from '@nestjs/common';
 import { PersonRepository } from './person.repository';
-import { Person } from './person.entity';
+import { PersonEntity } from './person.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class PersonService {
   constructor(
-    @InjectRepository(Person)
+    @InjectRepository(PersonEntity)
     private readonly personRepository: PersonRepository,
   ) {}
 
   async create(name: string, document: string, birthDate: Date) {
     return this.personRepository.save({ name, document, birthDate });
+  }
+
+  get(personId: number) {
+    return this.personRepository.findOneByOrFail({ id: personId });
   }
 }

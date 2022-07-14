@@ -42,7 +42,8 @@ $ npm run start:prod
 ```
 
 ## Documentation
-OpenApi Documentation is available at `http://localhost:3000/docs`
+OpenApi Documentation is available at https://account-managment-system.herokuapp.com/docs
+
 ## Test
 
 ```bash

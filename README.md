@@ -14,6 +14,22 @@ $ npm install
 
 ## Running the app
 
+Create .env file like this
+```dotenv
+DB_SCHEMA=public
+DB_HOST=loclahost
+DB_NAME=postgres
+DB_USERNAME=postgres
+DB_PASSWORD=password
+DB_SSL=false
+```
+
+Run migrations and seeders
+```bash
+npm run migration:run
+```
+
+Run application
 ```bash
 # development
 $ npm run start
@@ -25,6 +41,8 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Documentation
+OpenApi Documentation is available at `http://localhost:3000/docs`
 ## Test
 
 ```bash

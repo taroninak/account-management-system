@@ -14,7 +14,7 @@ export class PersonService {
     return this.personRepository.save({ name, document, birthDate });
   }
 
-  get(personId: number) {
+  async get(personId: number) {
     return this.personRepository.findOneByOrFail({ id: personId });
   }
 }
